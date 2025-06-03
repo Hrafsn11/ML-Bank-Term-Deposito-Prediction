@@ -1,9 +1,10 @@
 <?php
-// Halaman Riwayat Hasil Prediksi
+// Halaman Riwayat Hasil Prediksi - menampilkan seluruh riwayat prediksi user
 $dataset_dir = 'dataset/';
 $hasil_dir = 'hasil/';
 $history = [];
 
+// Loop semua file dataset untuk mencari riwayat
 foreach (glob($dataset_dir . '*.csv') as $csv_file) {
     $filename = basename($csv_file);
     $is_manual = strpos($filename, 'manual_input_') === 0;
@@ -16,7 +17,7 @@ foreach (glob($dataset_dir . '*.csv') as $csv_file) {
             $rows[] = $row;
         }
         fclose($handle);
-        // Cari file hasil prediksi unik yang sesuai
+        // Cari file hasil prediksi yang sesuai dataset
         $hasil_pattern = $hasil_dir . 'hasil_' . pathinfo($filename, PATHINFO_FILENAME) . '_*.csv';
         $hasil_files = glob($hasil_pattern);
         $hasil_file = '';
@@ -34,7 +35,7 @@ foreach (glob($dataset_dir . '*.csv') as $csv_file) {
         ];
     }
 }
-// Urutkan terbaru di atas
+// Urutkan riwayat terbaru di atas
 usort($history, function ($a, $b) {
     return strtotime($b['tanggal']) - strtotime($a['tanggal']); });
 ?>

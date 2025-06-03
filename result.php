@@ -1,8 +1,10 @@
 <?php
+// Halaman hasil prediksi: tampilkan tabel data dan hasil prediksi
 $upload_dir = 'dataset/';
 $model_dir = 'model/';
 $hasil_dir = 'hasil/';
 
+// Pastikan folder tersedia
 if (!is_dir($upload_dir))
     mkdir($upload_dir, 0777, true);
 if (!is_dir($model_dir))
@@ -17,7 +19,7 @@ if (isset($_GET['filename']) && isset($_GET['model'])) {
     $dataset_path = $upload_dir . $filename;
     $model_path = $model_dir . $model;
 
-    // Cek apakah file ada
+    // Validasi file dataset dan model
     if (!file_exists($dataset_path)) {
         die("File dataset tidak ditemukan.");
     }
@@ -25,20 +27,20 @@ if (isset($_GET['filename']) && isset($_GET['model'])) {
         die("File model tidak ditemukan.");
     }
 
-    // Jika hasil_file sudah ada, tidak perlu jalankan python lagi
+    // Jika hasil prediksi sudah ada, tidak perlu jalankan python lagi
     if ($hasil_file && file_exists($hasil_file)) {
         $prediction_output = '';
     } else {
-        // Jalankan Python script
+        // Jalankan script Python untuk prediksi
         $command = "python run_model.py \"$dataset_path\" \"$model_path\" 2>&1";
         $prediction_output = shell_exec($command);
-        // Ambil hasil_file dari output jika ada
+        // Ambil path file hasil dari output Python
         if (preg_match('/\[RESULT_CSV\](.+)\n/', $prediction_output, $m)) {
             $hasil_file = trim($m[1]);
         }
     }
 
-    // Baca dataset CSV untuk ditampilkan sebagai tabel gabung dengan hasil prediksi
+    // Baca dataset CSV dan gabungkan dengan hasil prediksi
     $table_html = '<table class="mt-6"><thead><tr><th>No</th>';
     $data_rows = [];
     if (($handle = fopen($dataset_path, "r")) !== false) {
@@ -58,6 +60,7 @@ if (isset($_GET['filename']) && isset($_GET['model'])) {
         fclose($handle);
     }
 
+    // Ambil hasil prediksi dari file hasil
     $prediksi = [];
     if ($hasil_file && file_exists($hasil_file)) {
         if (($h = fopen($hasil_file, 'r')) !== false) {
@@ -77,6 +80,7 @@ if (isset($_GET['filename']) && isset($_GET['model'])) {
             fclose($h);
         }
     } else {
+        // Jika hasil belum ada, parsing dari output HTML Python
         $hasil_col_index = null;
         if (preg_match('/<table.*?<thead>(.*?)<\/thead>.*?<tbody>(.*?)<\/tbody>/is', $prediction_output, $matches)) {
             $thead = $matches[1];
@@ -99,7 +103,7 @@ if (isset($_GET['filename']) && isset($_GET['model'])) {
             }
         }
     }
-    // Gabungkan data dan prediksi
+    // Gabungkan data dan prediksi ke tabel HTML
     $row_num = 1;
     foreach ($data_rows as $i => $row) {
         $table_html .= "<tr><td>" . $row_num++ . "</td>";
@@ -111,7 +115,7 @@ if (isset($_GET['filename']) && isset($_GET['model'])) {
     }
     $table_html .= "</tbody></table>";
 
-    // Tampilkan HTML
+    // Tampilkan hasil prediksi dan data
     echo <<<HTML
     <!DOCTYPE html>
     <html lang="en">

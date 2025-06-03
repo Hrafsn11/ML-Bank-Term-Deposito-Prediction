@@ -41,6 +41,7 @@
 <body class="bg-[#101624] text-gray-200 min-h-screen flex flex-col">
 
     <!-- Header -->
+    <!-- Bagian header aplikasi -->
     <header
         class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-12 shadow-lg animate__animated animate__fadeIn">
         <div class="max-w-5xl mx-auto px-6 text-center">
@@ -49,6 +50,7 @@
     </header>
 
     <!-- Navigation -->
+    <!-- Navigasi utama aplikasi -->
     <nav class="bg-[#181f33] shadow-md sticky top-0 z-10 animate__animated animate__fadeInDown">
         <div class="max-w-5xl mx-auto px-6">
             <div class="flex gap-6 py-4">
@@ -88,6 +90,7 @@
         class="max-w-4xl mx-auto p-8 mt-12 bg-[#181f33] rounded-2xl shadow-xl flex-grow mb-12 animate__animated animate__fadeIn">
 
         <!-- Info Section -->
+        <!-- Penjelasan tentang dataset dan fitur -->
         <section class="mb-12">
             <h2 class="text-3xl font-bold mb-6 text-blue-300 border-b border-blue-800 pb-2 gradient-text">Tentang
                 Dataset</h2>
@@ -102,6 +105,7 @@
 
             <div class="bg-[#232b47] p-8 rounded-xl shadow-sm">
                 <h3 class="font-semibold text-gray-200 mb-6 text-xl">Fitur Utama Dataset</h3>
+                <!-- Daftar fitur utama dataset -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <ul class="space-y-3">
                         <li class="feature-card bg-[#181f33] p-4 rounded-lg shadow-sm flex items-center gap-3">
@@ -240,6 +244,7 @@
         </section>
 
         <!-- Download Dataset Button -->
+        <!-- Tombol download contoh dataset -->
         <div class="mb-12 text-center">
             <a href="assets/dataset/ContohDataset - test.csv" download
                 class="inline-flex items-center gap-3 bg-green-700 text-white px-10 py-4 rounded-xl hover:bg-green-800 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl hover-scale">
@@ -253,6 +258,7 @@
         </div>
 
         <!-- Upload Form -->
+        <!-- Form upload dataset dan pemilihan model -->
         <section class="bg-[#232b47] p-10 rounded-xl shadow-sm">
             <h2 class="text-3xl font-bold mb-8 text-blue-300 text-center gradient-text">Upload Dataset dan Pilih Model
             </h2>
@@ -307,6 +313,7 @@
     </main>
 
     <!-- Footer -->
+    <!-- Footer aplikasi -->
     <footer class="bg-[#181f33] text-gray-400 text-center py-8 mt-auto shadow-inner">
         <div class="max-w-5xl mx-auto px-6">
             <p class="text-sm">&copy; 2025 Bank Term Deposit Prediction</p>

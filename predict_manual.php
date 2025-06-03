@@ -1,4 +1,5 @@
 <?php
+// Proses prediksi manual dari form input user
 ob_start();
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
@@ -6,6 +7,7 @@ error_reporting(E_ALL);
 $upload_dir = 'dataset/';
 $model_dir = 'model/';
 $hasil_dir = 'hasil/';
+// Pastikan folder tersedia
 if (!is_dir($upload_dir))
     mkdir($upload_dir, 0777, true);
 if (!is_dir($model_dir))
@@ -14,11 +16,12 @@ if (!is_dir($hasil_dir))
     mkdir($hasil_dir, 0777, true);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Ambil data dari form dan konversi saldo ke euro dengan pembulatan
+    // Ambil data dari form dan konversi saldo ke euro
     $saldo = $_POST['balance'];
     $saldo_rupiah = preg_replace('/[^0-9]/', '', $saldo); 
-    $saldo_euro = round($saldo_rupiah / 18504); // Konversi ke wuro, dibulatkan ke integer
+    $saldo_euro = round($saldo_rupiah / 18504); 
 
+    // Susun data input sesuai urutan kolom model
     $formData = [
         'age' => $_POST['age'],
         'job' => $_POST['job'],
@@ -38,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'poutcome' => $_POST['poutcome']
     ];
 
-    // Buat file CSV sementara
+    // Simpan data ke file CSV sementara
     $timestamp = time();
     $filename = "manual_input_{$timestamp}.csv";
     $filepath = $upload_dir . $filename;
@@ -54,10 +57,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $command = "python run_model.py \"$filepath\" \"$model_path\" 2>&1";
     $output = shell_exec($command);
     $hasil_file = '';
+    // Ambil path file hasil dari output Python
     if (preg_match('/\[RESULT_CSV\](.+)\n/', $output, $m)) {
         $hasil_file = trim($m[1]);
     }
 
+    // Redirect ke halaman hasil prediksi
     header("Location: result.php?filename=" . urlencode($filename) . "&model=" . urlencode($model) . "&hasil_file=" . urlencode($hasil_file));
     exit();
 } else {
