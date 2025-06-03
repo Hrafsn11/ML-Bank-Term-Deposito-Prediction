@@ -57,7 +57,7 @@ Website ini adalah aplikasi prediksi deposito berjangka bank berbasis machine le
 
 ## Tampilan Aplikasi
 
-![Landing Page](assets/img/Landingpage.png)
+![Landing Page](https://i.imgur.com/MyAjR8O.png)
 *Landing page aplikasi prediksi deposito bank*
 
 ![Upload Dataset](assets/img/Upload-Dataset.png)
