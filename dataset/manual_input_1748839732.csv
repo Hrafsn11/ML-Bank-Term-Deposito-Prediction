@@ -1,0 +1,2 @@
+age,job,marital,education,default,balance,housing,loan,contact,day,month,duration,campaign,pdays,previous,poutcome
+19,services,married,primary,yes,124,yes,no,cellular,2,aug,122,2,-1,2,success

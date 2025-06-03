@@ -1,0 +1,2 @@
+age,job,marital,education,default,balance,housing,loan,contact,day,month,duration,campaign,pdays,previous,poutcome
+35,admin.,married,tertiary,yes,2447,no,yes,cellular,1,apr,350,1,-1,1,success

@@ -1,0 +1,2 @@
+age,job,marital,education,default,balance,housing,loan,contact,day,month,duration,campaign,pdays,previous,poutcome
+50,blue-collar,married,tertiary,yes,0.04,no,yes,telephone,8,jun,122,2,-1,4,success

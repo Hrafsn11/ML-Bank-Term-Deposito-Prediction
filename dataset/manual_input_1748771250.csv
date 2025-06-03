@@ -1,0 +1,2 @@
+age,job,marital,education,default,balance,housing,loan,contact,day,month,duration,campaign,pdays,previous,poutcome
+18,student,married,tertiary,yes,1785,yes,no,telephone,2,jul,213,1,-1,0,success

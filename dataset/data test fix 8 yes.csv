@@ -1,0 +1,11 @@
+age,job,marital,education,default,balance,housing,loan,contact,day,month,duration,campaign,pdays,previous,poutcome
+32,services,single,secondary,no,1168,yes,no,cellular,16,nov,411,1,-1,0,unknown
+29,management,single,secondary,no,703,yes,no,cellular,16,nov,236,1,550,2,success
+25,services,single,secondary,no,199,no,no,cellular,16,nov,173,1,92,5,failure
+32,blue-collar,married,secondary,no,136,no,no,cellular,16,nov,206,1,188,3,success
+75,retired,divorced,tertiary,no,3810,yes,no,cellular,16,nov,262,1,183,1,failure
+29,management,single,tertiary,no,765,no,no,cellular,16,nov,238,1,-1,0,unknown
+28,self-employed,single,tertiary,no,159,no,no,cellular,16,nov,449,2,33,4,success
+59,management,married,tertiary,no,138,yes,yes,cellular,16,nov,162,2,187,5,failure
+68,retired,married,secondary,no,1146,no,no,cellular,16,nov,212,1,187,6,success
+25,student,single,secondary,no,358,no,no,cellular,16,nov,330,1,-1,0,unknown

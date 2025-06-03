@@ -1,0 +1,2 @@
+age,job,marital,education,default,balance,housing,loan,contact,day,month,duration,campaign,pdays,previous,poutcome
+51,unknown,divorced,tertiary,no,6659,no,yes,unknown,12,nov,233,1,-1,2,success
