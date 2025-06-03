@@ -48,7 +48,7 @@ Website ini adalah aplikasi prediksi deposito berjangka bank berbasis machine le
    pip install pandas joblib
    ```
 3. Jalankan server lokal (misal Laragon/XAMPP).
-4. Akses `home.php` melalui browser.
+4. Akses `index.php` melalui browser.
 
 ## Catatan
 - Model machine learning harus berupa file `.sav` hasil training pipeline scikit-learn.
