@@ -1,4 +1,4 @@
-# ML-Bank-Term-Deposito-Prediction
+![image](https://github.com/user-attachments/assets/3ede51de-be7a-435f-bd44-01f04c76bbdb)# ML-Bank-Term-Deposito-Prediction
 
 Website ini adalah aplikasi prediksi deposito berjangka bank berbasis machine learning dengan antarmuka web. Aplikasi ini memungkinkan pengguna mengunggah dataset, memilih model prediksi, dan melihat hasil prediksi secara interaktif.
 
@@ -60,16 +60,16 @@ Website ini adalah aplikasi prediksi deposito berjangka bank berbasis machine le
 ![Landing Page](https://i.imgur.com/MyAjR8O.png)
 *Landing page aplikasi prediksi deposito bank*
 
-![Upload Dataset](assets/img/Upload-Dataset.png)
+![Upload Dataset](https://i.imgur.com/rdlqu7I.png)
 *Form upload dataset dan pemilihan model*
 
-![Input Manual](assets/img/InputManual.png)
+![Input Manual](https://i.imgur.com/c7FhIWh.png)
 *Form input data manual untuk prediksi*
 
-![Hasil Prediksi](assets/img/HasilPrediksi.png)
+![Hasil Prediksi](https://i.imgur.com/gGCKbsp.png)
 *Tampilan hasil prediksi dalam tabel*
 
-![Riwayat Input](assets/img/HistoryInput.png)
+![Riwayat Input](https://i.imgur.com/Md0hgTd.png)
 *Halaman riwayat prediksi yang pernah dilakukan*
 
 
